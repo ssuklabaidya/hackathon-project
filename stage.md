@@ -31,7 +31,7 @@ You can query households from DB✅
 
 Goal: Allow waste pickup requests.
 
-Create PickupRequest schema
+Create PickupRequest schema✅
 
 Create API to:
 
