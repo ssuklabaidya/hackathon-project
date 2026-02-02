@@ -1,0 +1,600 @@
+[{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba54"
+  },
+  "houseId": "H01",
+  "lat": 26.1441,
+  "lng": 91.7361,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba55"
+  },
+  "houseId": "H02",
+  "lat": 26.1445,
+  "lng": 91.7358,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba56"
+  },
+  "houseId": "H03",
+  "lat": 26.145,
+  "lng": 91.7352,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba57"
+  },
+  "houseId": "H04",
+  "lat": 26.1438,
+  "lng": 91.7368,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba58"
+  },
+  "houseId": "H05",
+  "lat": 26.1429,
+  "lng": 91.7349,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba59"
+  },
+  "houseId": "H06",
+  "lat": 26.1432,
+  "lng": 91.7355,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5a"
+  },
+  "houseId": "H07",
+  "lat": 26.1448,
+  "lng": 91.7364,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5b"
+  },
+  "houseId": "H08",
+  "lat": 26.1453,
+  "lng": 91.7371,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5c"
+  },
+  "houseId": "H09",
+  "lat": 26.146,
+  "lng": 91.736,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5d"
+  },
+  "houseId": "H10",
+  "lat": 26.1465,
+  "lng": 91.7351,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5e"
+  },
+  "houseId": "H11",
+  "lat": 26.1471,
+  "lng": 91.7345,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba5f"
+  },
+  "houseId": "H12",
+  "lat": 26.1478,
+  "lng": 91.7339,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba60"
+  },
+  "houseId": "H13",
+  "lat": 26.1482,
+  "lng": 91.7348,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba61"
+  },
+  "houseId": "H14",
+  "lat": 26.1489,
+  "lng": 91.7356,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba62"
+  },
+  "houseId": "H15",
+  "lat": 26.1495,
+  "lng": 91.7363,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba63"
+  },
+  "houseId": "H16",
+  "lat": 26.1499,
+  "lng": 91.737,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba64"
+  },
+  "houseId": "H17",
+  "lat": 26.1504,
+  "lng": 91.736,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba65"
+  },
+  "houseId": "H18",
+  "lat": 26.1509,
+  "lng": 91.7352,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba66"
+  },
+  "houseId": "H19",
+  "lat": 26.1514,
+  "lng": 91.7344,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba67"
+  },
+  "houseId": "H20",
+  "lat": 26.1519,
+  "lng": 91.7337,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba68"
+  },
+  "houseId": "H21",
+  "lat": 26.1523,
+  "lng": 91.7346,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba69"
+  },
+  "houseId": "H22",
+  "lat": 26.1528,
+  "lng": 91.7355,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6a"
+  },
+  "houseId": "H23",
+  "lat": 26.1533,
+  "lng": 91.7362,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6b"
+  },
+  "houseId": "H24",
+  "lat": 26.1537,
+  "lng": 91.737,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6c"
+  },
+  "houseId": "H25",
+  "lat": 26.1542,
+  "lng": 91.7361,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6d"
+  },
+  "houseId": "H26",
+  "lat": 26.1546,
+  "lng": 91.7353,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6e"
+  },
+  "houseId": "H27",
+  "lat": 26.1551,
+  "lng": 91.7345,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba6f"
+  },
+  "houseId": "H28",
+  "lat": 26.1556,
+  "lng": 91.7338,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba70"
+  },
+  "houseId": "H29",
+  "lat": 26.156,
+  "lng": 91.7347,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba71"
+  },
+  "houseId": "H30",
+  "lat": 26.1565,
+  "lng": 91.7356,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba72"
+  },
+  "houseId": "H31",
+  "lat": 26.157,
+  "lng": 91.7364,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba73"
+  },
+  "houseId": "H32",
+  "lat": 26.1575,
+  "lng": 91.7358,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba74"
+  },
+  "houseId": "H33",
+  "lat": 26.158,
+  "lng": 91.735,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba75"
+  },
+  "houseId": "H34",
+  "lat": 26.1584,
+  "lng": 91.7342,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba76"
+  },
+  "houseId": "H35",
+  "lat": 26.1589,
+  "lng": 91.7336,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba77"
+  },
+  "houseId": "H36",
+  "lat": 26.1593,
+  "lng": 91.7344,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba78"
+  },
+  "houseId": "H37",
+  "lat": 26.1598,
+  "lng": 91.7352,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba79"
+  },
+  "houseId": "H38",
+  "lat": 26.1602,
+  "lng": 91.736,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7a"
+  },
+  "houseId": "H39",
+  "lat": 26.1607,
+  "lng": 91.7367,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7b"
+  },
+  "houseId": "H40",
+  "lat": 26.1611,
+  "lng": 91.7359,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7c"
+  },
+  "houseId": "H41",
+  "lat": 26.1616,
+  "lng": 91.7351,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7d"
+  },
+  "houseId": "H42",
+  "lat": 26.162,
+  "lng": 91.7343,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7e"
+  },
+  "houseId": "H43",
+  "lat": 26.1624,
+  "lng": 91.7336,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba7f"
+  },
+  "houseId": "H44",
+  "lat": 26.1629,
+  "lng": 91.7344,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba80"
+  },
+  "houseId": "H45",
+  "lat": 26.1633,
+  "lng": 91.7352,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba81"
+  },
+  "houseId": "H46",
+  "lat": 26.1638,
+  "lng": 91.736,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba82"
+  },
+  "houseId": "H47",
+  "lat": 26.1642,
+  "lng": 91.7367,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba83"
+  },
+  "houseId": "H48",
+  "lat": 26.1646,
+  "lng": 91.7358,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba84"
+  },
+  "houseId": "H49",
+  "lat": 26.165,
+  "lng": 91.735,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+},
+{
+  "_id": {
+    "$oid": "69809289dc4af96bff16ba85"
+  },
+  "houseId": "H50",
+  "lat": 26.1654,
+  "lng": 91.7342,
+  "ward": "Ward-5",
+  "points": 0,
+  "isActive": true,
+  "createdAt": "2026-02-01T00:00:00Z"
+}]
