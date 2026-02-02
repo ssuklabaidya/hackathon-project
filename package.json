@@ -9,6 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^3.31.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "framer-motion": "^12.30.0",
+    "lucide-react": "^0.563.0",
     "mongoose": "^9.1.5",
     "next": "16.1.6",
     "react": "19.2.3",
