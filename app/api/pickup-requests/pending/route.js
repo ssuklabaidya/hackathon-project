@@ -10,19 +10,15 @@ export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const shift = searchParams.get("shift");
 
-    // 1️⃣ Validate shift
-    if (!shift || !["morning", "evening"].includes(shift)) {
-      return NextResponse.json(
-        { success: false, message: "Valid shift is required" },
-        { status: 400 },
-      );
+    // 1️⃣ Build query dynamically
+    const query = { status: "pending" };
+
+    if (shift) {
+      query.shift = shift; // only filter if shift is provided
     }
 
     // 2️⃣ Fetch pending pickup requests
-    const requests = await PickupRequest.find({
-      shift,
-      status: "pending",
-    });
+    const requests = await PickupRequest.find(query);
 
     // 3️⃣ Attach household location
     const enrichedRequests = [];
@@ -36,6 +32,7 @@ export async function GET(req) {
         requestId: request._id,
         houseId: request.houseId,
         wasteTypes: request.wasteTypes,
+        shift: request.shift,
         lat: house.lat,
         lng: house.lng,
       });

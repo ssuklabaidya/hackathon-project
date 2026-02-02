@@ -93,7 +93,7 @@ Pickup lifecycle works end-to-end
 
 🟢 STAGE 7: Incentive / Points System
 
-Goal: Reward correct segregation.
+Goal: Reward correct segregation.✅
 
 Create Points schema
 

@@ -9,7 +9,8 @@ export async function POST(req) {
 
     const body = await req.json();
     const { houseId, wasteTypes, shift } = body;
-    // Validation
+
+    // 1️⃣ Basic validation
     if (
       !houseId ||
       !wasteTypes ||
@@ -18,22 +19,12 @@ export async function POST(req) {
       !shift
     ) {
       return NextResponse.json(
-        {
-          success: false,
-          message: "houseId, wasteTypes array, and shift are required",
-        },
+        { success: false, message: "houseId, wasteTypes, shift are required" },
         { status: 400 },
       );
     }
 
-    // Create pickup request
-    const pickupRequest = await PickupRequest.create({
-      houseId,
-      wasteTypes,
-      shift,
-    });
-
-    // 2️⃣ Check if household exists & active
+    // 2️⃣ Check household exists & active
     const household = await Household.findOne({ houseId, isActive: true });
     if (!household) {
       return NextResponse.json(
@@ -42,6 +33,34 @@ export async function POST(req) {
       );
     }
 
+    // 3️⃣ 24-HOUR RULE (IMPORTANT)
+    const lastRequest = await PickupRequest.findOne({ houseId }).sort({
+      createdAt: -1,
+    });
+
+    if (lastRequest) {
+      const now = new Date();
+      const diffHours =
+        (now.getTime() - lastRequest.createdAt.getTime()) / (1000 * 60 * 60);
+
+      if (diffHours < 24) {
+        return NextResponse.json(
+          {
+            success: false,
+            message: "Pickup request already made in last 24 hours",
+          },
+          { status: 429 }, // Too Many Requests
+        );
+      }
+    }
+
+    // 4️⃣ Create pickup request
+    const pickupRequest = await PickupRequest.create({
+      houseId,
+      wasteTypes,
+      shift,
+    });
+
     return NextResponse.json({
       success: true,
       message: "Pickup request created successfully",
@@ -49,10 +68,7 @@ export async function POST(req) {
     });
   } catch (error) {
     return NextResponse.json(
-      {
-        success: false,
-        message: error.message,
-      },
+      { success: false, message: error.message },
       { status: 500 },
     );
   }
