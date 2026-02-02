@@ -35,14 +35,14 @@ Create PickupRequest schema✅
 
 Create API to:
 
-Add pickup request
+Add pickup request✅
 
-Store houseId, shift, wasteType
+Store houseId, shift, wasteType✅
 
-Default status = pending
+Default status = pending✅
 
 ✅ Output:
-Pickup requests stored in DB
+Pickup requests stored in DB✅
 
 🟢 STAGE 4: Fetch Pending Requests by Shift
 
