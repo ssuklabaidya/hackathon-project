@@ -5,6 +5,7 @@ const HouseholdSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
+    index: true,
   },
   lat: {
     type: Number,
@@ -17,10 +18,12 @@ const HouseholdSchema = new mongoose.Schema({
   ward: {
     type: String,
     required: true,
+    index: true,
   },
   points: {
     type: Number,
     default: 0,
+    index: true,
   },
   isActive: {
     type: Boolean,

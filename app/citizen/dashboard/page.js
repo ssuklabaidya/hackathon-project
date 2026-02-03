@@ -42,7 +42,7 @@ export default function CitizenHome() {
 
           <div
             className="bg-white rounded-lg shadow-sm border-2 border-transparent hover:border-blue-500 cursor-pointer hover:shadow-lg transition-all"
-            onClick={() => router.push("/citizen/pickup-status")}
+            onClick={() => router.push("/citizen/points-list")}
           >
             <div className="p-6">
               <div className="flex items-center gap-4">
