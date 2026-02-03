@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, Mail, Phone, Lock, User } from "lucide-react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function CitizenLogin() {
   const router = useRouter();
@@ -24,9 +25,14 @@ export default function CitizenLogin() {
     router.push("/citizen/dashboard");
   };
 
-  const handleGoogleLogin = () => {
-    // Mock Google login
-    router.push("/citizen/dashboard");
+  const handleGoogleLogin = async () => {
+    try {
+      await signIn("google", {
+        callbackUrl: "/citizen/dashboard",
+      });
+    } catch (error) {
+      console.error("Google login error:", error);
+    }
   };
 
   return (
