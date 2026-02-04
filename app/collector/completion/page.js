@@ -21,7 +21,12 @@ export default function PickupCompletion() {
   const [toastMessage, setToastMessage] = useState("");
   const [selectedShift, setSelectedShift] = useState("");
 
-  // 🔹 Fetch pending pickups (with optional shift filter)
+  // ── New states for failure reporting ────────────────────────────────
+  const [failingPickupId, setFailingPickupId] = useState(null);
+  const [failIssueType, setFailIssueType] = useState("");
+  const [failDescription, setFailDescription] = useState("");
+
+  // Fetch pending pickups (with optional shift filter)
   useEffect(() => {
     const url = selectedShift
       ? `/api/pickup-requests/pending?shift=${selectedShift}`
@@ -43,7 +48,7 @@ export default function PickupCompletion() {
       });
   }, [selectedShift]);
 
-  // 🔹 Complete pickup
+  // Complete pickup
   const handleComplete = async (pickupId) => {
     const isProper = segregationStatus[pickupId] || false;
 
@@ -64,6 +69,44 @@ export default function PickupCompletion() {
     setToastMessage(message);
 
     setTimeout(() => setToastMessage(""), 3000);
+  };
+
+  // Report failure
+  const handleReportFailure = async (pickupId) => {
+    if (!failIssueType) {
+      setToastMessage("Please select a reason");
+      setTimeout(() => setToastMessage(""), 3000);
+      return;
+    }
+
+    try {
+      const res = await fetch("/api/admin/issues/report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          pickupRequestId: pickupId,
+          collectorId: "C01", // ← Replace with actual collector ID from auth
+          issueType: failIssueType,
+          description: failDescription.trim() || "No description provided",
+        }),
+      });
+
+      if (res.ok) {
+        setToastMessage(`Issue reported: ${failIssueType}`);
+        // Optional: mark as completed / handled
+        setCompletedPickups((prev) => [...prev, pickupId]);
+      } else {
+        setToastMessage("Failed to report issue");
+      }
+    } catch (err) {
+      setToastMessage("Network error – please try again");
+    }
+
+    // Reset & close form
+    setFailingPickupId(null);
+    setFailIssueType("");
+    setFailDescription("");
+    setTimeout(() => setToastMessage(""), 4000);
   };
 
   const isCompleted = (pickupId) => completedPickups.includes(pickupId);
@@ -131,7 +174,7 @@ export default function PickupCompletion() {
       {/* Main Content */}
       <div className="flex-1 p-8">
         <div className="max-w-4xl mx-auto">
-          {/* 🔴 HEADER + FILTER */}
+          {/* HEADER + FILTER */}
           <div className="mb-8 flex items-start justify-between">
             <div>
               <h1 className="text-3xl text-gray-900 font-bold mb-2">
@@ -185,34 +228,89 @@ export default function PickupCompletion() {
                       </p>
 
                       {!isCompleted(pickup.id) && (
-                        <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                          <label className="text-base mb-3 block font-medium text-gray-700">
-                            Segregation Status
-                          </label>
+                        <>
+                          <div className="mt-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <label className="text-base mb-3 block font-medium text-gray-700">
+                              Segregation Status
+                            </label>
 
-                          <button
-                            type="button"
-                            onClick={() =>
-                              setSegregationStatus({
-                                ...segregationStatus,
-                                [pickup.id]: !segregationStatus[pickup.id],
-                              })
-                            }
-                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                              segregationStatus[pickup.id]
-                                ? "bg-green-600"
-                                : "bg-gray-300"
-                            }`}
-                          >
-                            <span
-                              className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                            <button
+                              type="button"
+                              onClick={() =>
+                                setSegregationStatus({
+                                  ...segregationStatus,
+                                  [pickup.id]: !segregationStatus[pickup.id],
+                                })
+                              }
+                              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
                                 segregationStatus[pickup.id]
-                                  ? "translate-x-6"
-                                  : "translate-x-1"
+                                  ? "bg-green-600"
+                                  : "bg-gray-300"
                               }`}
-                            />
-                          </button>
-                        </div>
+                            >
+                              <span
+                                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                                  segregationStatus[pickup.id]
+                                    ? "translate-x-6"
+                                    : "translate-x-1"
+                                }`}
+                              />
+                            </button>
+                          </div>
+
+                          {/* Failure reporting form */}
+                          {failingPickupId === pickup.id && (
+                            <div className="mt-5 p-4 bg-red-50 border border-red-200 rounded-lg">
+                              <div className="flex items-center justify-between mb-3">
+                                <h4 className="font-medium text-red-800">
+                                  Report Failure
+                                </h4>
+                                <button
+                                  onClick={() => setFailingPickupId(null)}
+                                  className="text-red-700 hover:text-red-900"
+                                >
+                                  <X className="w-5 h-5" />
+                                </button>
+                              </div>
+
+                              <select
+                                value={failIssueType}
+                                onChange={(e) => setFailIssueType(e.target.value)}
+                                className="w-full p-2.5 border border-gray-300 rounded mb-3 text-sm focus:outline-none focus:ring-2 focus:ring-red-500"
+                              >
+                                <option value="">Select reason</option>
+                                <option value="EMPTY_BIN">EMPTY_BIN</option>
+                                <option value="WASTE_NOT_AVAILABLE">WASTE_NOT_AVAILABLE</option>
+                                <option value="HOUSE_CLOSED">HOUSE_CLOSED</option>
+                                <option value="WRONG_WASTE_TYPE">WRONG_WASTE_TYPE</option>
+                                <option value="COLLECTOR_MISCONDUCT">COLLECTOR_MISCONDUCT</option>
+                              </select>
+
+                              <textarea
+                                value={failDescription}
+                                onChange={(e) => setFailDescription(e.target.value)}
+                                placeholder="Additional details (optional)"
+                                rows={3}
+                                className="w-full p-2.5 border border-gray-300 rounded text-sm resize-none focus:outline-none focus:ring-2 focus:ring-red-500"
+                              />
+
+                              <div className="mt-4 flex gap-3">
+                                <button
+                                  onClick={() => handleReportFailure(pickup.id)}
+                                  className="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-medium transition-colors"
+                                >
+                                  Submit Issue
+                                </button>
+                                <button
+                                  onClick={() => setFailingPickupId(null)}
+                                  className="px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-md text-sm transition-colors"
+                                >
+                                  Cancel
+                                </button>
+                              </div>
+                            </div>
+                          )}
+                        </>
                       )}
 
                       {isCompleted(pickup.id) && (
@@ -225,14 +323,27 @@ export default function PickupCompletion() {
                       )}
                     </div>
 
-                    <div>
+                    <div className="flex flex-col gap-3 items-end">
                       {!isCompleted(pickup.id) ? (
-                        <button
-                          onClick={() => handleComplete(pickup.id)}
-                          className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition-colors"
-                        >
-                          Mark as Completed
-                        </button>
+                        <>
+                          <button
+                            onClick={() => handleComplete(pickup.id)}
+                            className="px-4 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md transition-colors"
+                          >
+                          Sucess
+                          </button>
+
+                          <button
+                            onClick={() => {
+                              setFailingPickupId(pickup.id);
+                              setFailIssueType("");
+                              setFailDescription("");
+                            }}
+                            className="px-6 py-2.5 bg-red-100 hover:bg-red-200 text-red-700 font-medium rounded-md transition-colors text-sm"
+                          >
+                            Failed
+                          </button>
+                        </>
                       ) : (
                         <button
                           disabled
